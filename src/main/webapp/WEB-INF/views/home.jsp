@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@ include file="header.jsp"%>
+<%@ include file="header.jsp" %>
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
@@ -71,12 +71,16 @@
     <div class="help--slides active" data-id="1">
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
-
+        <c:forEach items="${institutions}" var="intitutions" varStatus="">
         <ul class="help--slides-items">
+
             <li>
                 <div class="col">
-                    <div class="title">Fundacja "Dbam o Zdrowie"</div>
-                    <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>
+
+
+                        <div class="title">${intitutions.name}</div>
+                        <div class="subtitle">${intitutions.description}</div>
+
                 </div>
 
                 <div class="col">
@@ -85,21 +89,12 @@
                 </div>
             </li>
 
-            <li>
-                <div class="col">
-                    <div class="title">Fundacja “Dla dzieci"</div>
-                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>
-                </div>
-                <div class="col">
-                    <div class="title">Fundacja “Bez domu”</div>
-                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>
-                </div>
-
-            </li>
 
         </ul>
+        </c:forEach>
     </div>
 
 </section>
-<%@include file="footer.jsp"%>
+<%@include file="footer.jsp" %>
+
 
