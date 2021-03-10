@@ -83,27 +83,20 @@
     <div class="help--slides active" data-id="1">
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
-        <c:forEach items="${institutions}" var="intitutions" varStatus="">
-            <ul class="help--slides-items">
-
-                <li>
-                    <div class="col">
-
-
-                        <div class="title">${intitutions.name}</div>
-                        <div class="subtitle">${intitutions.description}</div>
-
-                    </div>
-
-                    <div class="col">
-                        <div class="title">Fundacja "A kogo"</div>
-                        <div class="subtitle">Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.</div>
-                    </div>
-                </li>
-
-
-            </ul>
-        </c:forEach>
+        <ul class="help--slides-items">
+            <li>
+                <c:forEach items="${institutions}" var="intitutions" varStatus="number">
+                <div class="col">
+                    <div class="title">${intitutions.name}</div>
+                    <div class="subtitle">${intitutions.description}</div>
+                </div>
+                <c:if test="${number.index%2==1}">
+            </li>
+            <li>
+                </c:if>
+                </c:forEach>
+            </li>
+        </ul>
     </div>
 
 </section>
