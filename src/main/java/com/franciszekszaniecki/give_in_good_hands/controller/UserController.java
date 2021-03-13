@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveAddUser(@Valid @ModelAttribute("user") User user, BindingResult result) {
-        if (result.hasErrors()) {
+    public String saveAddUser(@Valid @ModelAttribute("user") User user,@RequestParam("password2") String password2, BindingResult result) {
+        if (!user.getPassword().equals(password2)) {
             return "registrationUser/registerForm";
         }
         userService.add(user);

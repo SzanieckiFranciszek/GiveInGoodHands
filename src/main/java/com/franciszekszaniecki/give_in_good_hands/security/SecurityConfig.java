@@ -30,11 +30,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .formLogin()
+                .usernameParameter("email")
                 .loginPage("/login")
-                .permitAll()
-                .defaultSuccessUrl("/donation/new")
+                .defaultSuccessUrl("/")
 
-                .and().logout().logoutSuccessUrl("/login")//Przekierowanie po wylogowaniu
+                .and()
+                .logout().logoutSuccessUrl("/")//Przekierowanie po wylogowaniu
                 .permitAll();
 
     }

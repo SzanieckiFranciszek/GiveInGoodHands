@@ -32,13 +32,9 @@ public class UserServiceImplements implements UserService {
     }
 
     @Override
-    public User findByUserName(String userName) {
-        return userRepository.findByUserName(userName);
-    }
-
-    @Override
     public User findByUserEmail(String email) {
-        return null;
+
+        return userRepository.findByEmail(email);
     }
 
     @Override
