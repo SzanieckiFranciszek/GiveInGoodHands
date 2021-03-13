@@ -18,6 +18,6 @@ public class DonationServiceImplements implements DonationService{
 
     @Override
     public Long allTransferedDonation() {
-        return donationRepository.allTransferedDonation();
+        return donationRepository.count();
     }
 }

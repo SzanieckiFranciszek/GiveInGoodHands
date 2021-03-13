@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CategoryServiceImplement implements CategoryService {
+public class CategoryServiceImplements implements CategoryService {
     private final CategoryRepository categoryRepository;
 
-    public CategoryServiceImplement(CategoryRepository categoryRepository) {
+    public CategoryServiceImplements(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 

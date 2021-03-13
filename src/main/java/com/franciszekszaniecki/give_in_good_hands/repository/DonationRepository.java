@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface DonationRepository extends JpaRepository<Donation, Long> {
     @Query("select sum(d.quantity) from Donation d")
     Long allBags();
-    @Query("select count(d.id) from Donation d")
-    Long allTransferedDonation();
+//    @Query("select count(d.id) from Donation d")
+//    Long allTransferedDonation();
 }
