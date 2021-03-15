@@ -43,7 +43,3 @@
 </header>
 
 <%@include file="../footer.jsp"%>
-
-<script src="resources/js/app.js"></script>
-</body>
-</html>

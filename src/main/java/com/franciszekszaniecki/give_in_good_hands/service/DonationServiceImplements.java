@@ -1,5 +1,6 @@
 package com.franciszekszaniecki.give_in_good_hands.service;
 
+import com.franciszekszaniecki.give_in_good_hands.model.Donation;
 import com.franciszekszaniecki.give_in_good_hands.repository.DonationRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,10 @@ public class DonationServiceImplements implements DonationService{
     @Override
     public Long allTransferedDonation() {
         return donationRepository.count();
+    }
+
+    @Override
+    public void add(Donation donation) {
+        donationRepository.save(donation);
     }
 }

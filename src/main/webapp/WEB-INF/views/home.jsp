@@ -61,8 +61,9 @@
             <p>kurier przyjedzie w dogodnym terminie</p>
         </div>
     </div>
-
+    <sec:authorize access="isAnonymous()">
     <a href="<c:url value="/registration"/> " class="btn btn--large">Załóż konto</a>
+    </sec:authorize>
 </section>
 
 <section class="about-us">
@@ -101,8 +102,6 @@
 
 </section>
 <%@include file="footer.jsp" %>
-<script src="<c:url value="/resources/js/app.js"/>"></script>
-</body>
-</html>
+
 
 

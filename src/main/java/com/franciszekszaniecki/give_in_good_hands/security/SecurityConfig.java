@@ -33,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("email")
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
-
                 .and()
                 .logout().logoutSuccessUrl("/")//Przekierowanie po wylogowaniu
                 .permitAll();
