@@ -2,6 +2,7 @@ package com.franciszekszaniecki.give_in_good_hands.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,6 +21,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SpringDataUserDetailsService springDataUserService() {
         return new SpringDataUserDetailsService();
     }
+    @Bean
+    public SimpleMailMessage templateSimpleMessage() {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setText(
+                "This is the test email template for your email:%s");
+        return message;
+    }
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -34,7 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
                 .and()
-                .logout().logoutSuccessUrl("/")//Przekierowanie po wylogowaniu
+                .logout()
+                .logoutSuccessUrl("/login")//Przekierowanie po wylogowaniu
                 .permitAll();
 
     }

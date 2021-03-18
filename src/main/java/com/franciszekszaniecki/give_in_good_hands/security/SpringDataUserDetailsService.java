@@ -3,7 +3,6 @@ package com.franciszekszaniecki.give_in_good_hands.security;
 import com.franciszekszaniecki.give_in_good_hands.model.User;
 import com.franciszekszaniecki.give_in_good_hands.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

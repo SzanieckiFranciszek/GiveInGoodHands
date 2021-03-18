@@ -2,7 +2,6 @@ package com.franciszekszaniecki.give_in_good_hands.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -16,17 +15,16 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\_\\+\\-\\=])(?=.*[A-Z])(?!.*\\s).{8,}$")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\_\\+\\-\\=])(?=.*[A-Z])(?!.*\\s).{8,}$")
     private String password;
     @Email
     private String email;
-//    @NotBlank
+    @NotBlank
     private String firstName;
-//    @NotBlank
+    @NotBlank
     private String lastName;
-    private int enabled;
+    private boolean enabled = false;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-
     private Set<Role> roles;
 
 }

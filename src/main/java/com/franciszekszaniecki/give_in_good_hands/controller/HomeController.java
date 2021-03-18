@@ -25,7 +25,7 @@ public class HomeController {
         model.addAttribute("institutions", allInstitution);
         Long allBags=donationService.allBags();
         model.addAttribute("allBags",allBags);
-        Long allTransferDonation = donationService.allTransferedDonation();
+        Long allTransferDonation = donationService.allTransferDonation();
         model.addAttribute("allTransferDonation",allTransferDonation);
         return "home";
     }

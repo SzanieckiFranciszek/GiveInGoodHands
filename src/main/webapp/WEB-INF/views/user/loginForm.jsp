@@ -14,8 +14,8 @@
 <header>
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li></li>
-            <li></li>
+            <li> </li>
+            <li> </li>
         </ul>
 
         <ul>

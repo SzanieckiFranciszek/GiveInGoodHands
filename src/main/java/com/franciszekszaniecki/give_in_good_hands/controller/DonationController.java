@@ -28,13 +28,13 @@ public class DonationController {
         model.addAttribute("donation", new Donation());
         model.addAttribute("categories", categoryService.findAllCategory());
         model.addAttribute("institutions", institutionService.findAllInstitution());
-        return "donationRegister/donationForm";
+        return "donation/donationForm";
     }
 
     @PostMapping("/form")
     public String formAddDonationPost(Donation donation) {
         donationService.add(donation);
-        return "redirect:/";
+        return "donation/confirmForm";
     }
 
 }

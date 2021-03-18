@@ -9,13 +9,33 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
-<%@ include file="header.jsp" %>
-
+<header class="header--main-page">
+    <%@ include file="header.jsp" %>
+    <ul>
+        <li><a href="/" class="btn btn--without-border active">Start</a></li>
+        <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
+        <sec:authorize access="isAuthenticated()">
+            <li><a href='<c:url value = "/donation/form"/>' class="btn btn--without-border ">Oddaj rzeczy</a></li>
+        </sec:authorize>
+        <li><a href="#" class="btn btn--without-border">O nas</a></li>
+        <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
+        <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+    </ul>
+    </nav>
+    <div class="slogan container container--90">
+        <div class="slogan--item">
+            <h1>
+                Zacznij pomagać!<br/>
+                Oddaj niechciane rzeczy w zaufane ręce
+            </h1>
+        </div>
+    </div>
+</header>
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
@@ -62,7 +82,7 @@
         </div>
     </div>
     <sec:authorize access="isAnonymous()">
-    <a href="<c:url value="/registration"/> " class="btn btn--large">Załóż konto</a>
+        <a href="<c:url value="/registration"/> " class="btn btn--large">Załóż konto</a>
     </sec:authorize>
 </section>
 
@@ -102,6 +122,10 @@
 
 </section>
 <%@include file="footer.jsp" %>
+<script src="<c:url value="/resources/js/app.js"/>"></script>
+<script src="<c:url value="/resources/js/configurationForm.js"/>"></script>
+</body>
+</html>
 
 
 

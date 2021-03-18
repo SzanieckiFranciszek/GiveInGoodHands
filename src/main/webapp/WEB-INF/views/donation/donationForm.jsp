@@ -12,11 +12,51 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
+    <title>Donation</title>
+    <link rel="stylesheet" href="<c:url value="../resources/css/style.css"/>"/>
 </head>
 <body>
-<%@ include file="../header.jsp"%>
+<header class="header--main-page">
+<%@include file="../header.jsp"%>
+        <ul>
+            <li><a href="/" class="btn btn--without-border active">Start</a></li>
+            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
+            <sec:authorize access="isAuthenticated()">
+                <li><a href='<c:url value = "/donation/form"/>' class="btn btn--without-border ">Oddaj rzeczy</a></li>
+            </sec:authorize>
+            <li><a href="#" class="btn btn--without-border">O nas</a></li>
+            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="slogan container container--90">
+        <div class="slogan--item">
+            <h1>
+                Oddaj rzeczy, których już nie chcesz<br />
+                <span class="uppercase">potrzebującym</span>
+            </h1>
+
+            <div class="slogan--steps">
+                <div class="slogan--steps-title">Wystarczą 4 proste kroki:</div>
+                <ul class="slogan--steps-boxes">
+                    <li>
+                        <div><em>1</em><span>Wybierz rzeczy</span></div>
+                    </li>
+                    <li>
+                        <div><em>2</em><span>Spakuj je w worki</span></div>
+                    </li>
+                    <li>
+                        <div><em>3</em><span>Wybierz fundację</span></div>
+                    </li>
+                    <li>
+                        <div><em>4</em><span>Zamów kuriera</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
 <section class="form--steps">
     <div class="form--steps-instructions">
         <div class="form--steps-container">
@@ -217,6 +257,10 @@
     </div>
 </section>
 <%@ include file="../footer.jsp" %>
+<script src="<c:url value="/resources/js/app.js"/>"></script>
+<script src="<c:url value="/resources/js/configurationForm.js"/>"></script>
+</body>
+</html>
 
 
 

@@ -8,10 +8,21 @@ import java.util.List;
 
 public interface UserService {
     List<User> getUsers();
+
     User findByUserEmail(String email);
+
     void saveUser(User user);
+
     void add(User user);
+
     void update(User user);
+
     void delete(Long id);
+
     User get(Long id);
+
+    int enableUser(String email);
+
+    String confirmToken(String token);
+
 }
