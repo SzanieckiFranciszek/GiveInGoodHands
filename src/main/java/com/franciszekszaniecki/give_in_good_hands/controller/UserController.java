@@ -1,5 +1,6 @@
-package com.franciszekszaniecki.give_in_good_hands.controller;
 
+
+package com.franciszekszaniecki.give_in_good_hands.controller;
 
 import com.franciszekszaniecki.give_in_good_hands.model.User;
 import com.franciszekszaniecki.give_in_good_hands.service.UserService;
@@ -16,30 +17,45 @@ public class UserController {
         this.userService = userService;
     }
 
+    //Add new user
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String saveRegistrationUser(Model model) {
 
         model.addAttribute("user", new User());
         return "user/registerForm";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String saveRegistrationUserPost(
-            @ModelAttribute("user") User user, @RequestParam("password2") String password2) {
+            @ModelAttribute("user") User user, @RequestParam("password2") String password2, Model model) {
         if (!user.getPassword().equals(password2)) {
+            model.addAttribute("wrongPassword", "Hasła nie są takie same, proszę podaj jeszcze raz");
             return "user/registerForm";
         }
         userService.add(user);
         userService.saveUser(user);
-        return "redirect:/";
+//        if (userService.saveUser(user)) {
+//
+//            return "user/emailSent";
+//
+//        }
+        return "user/emailSent";
     }
+    // All user account
 
+    //Edit user account
+
+    //Delete user account
+
+    //Confirm account user
     @GetMapping("/confirm")
     public String confirmToken(@RequestParam String token) {
-        return userService.confirmToken(token);
+        userService.confirmToken(token);
+        return "user/activationAccount";
 
     }
 
 
 }
+

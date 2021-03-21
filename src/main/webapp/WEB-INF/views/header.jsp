@@ -30,7 +30,7 @@
         <sec:authorize access="isAnonymous()">
         <ul class="nav--actions">
             <li><a href='<c:url value="/login"/>' class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href='<c:url value="/user/add"/>' class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li><a href='<c:url value="/user/register"/>' class="btn btn--small btn--highlighted">Załóż konto</a></li>
         </ul>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
@@ -50,24 +50,3 @@
             </li>
         </ul>
         </sec:authorize>
-<%--        <ul>--%>
-<%--            <li><a href="/" class="btn btn--without-border active">Start</a></li>--%>
-<%--            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>--%>
-<%--            <sec:authorize access="isAuthenticated()">--%>
-<%--                <li><a href='<c:url value = "/donation/form"/>' class="btn btn--without-border ">Oddaj rzeczy</a></li>--%>
-<%--            </sec:authorize>--%>
-<%--            <li><a href="#" class="btn btn--without-border">O nas</a></li>--%>
-<%--            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>--%>
-<%--            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>--%>
-<%--        </ul>--%>
-<%--    </nav>--%>
-
-<%--    <div class="slogan container container--90">--%>
-<%--        <div class="slogan--item">--%>
-<%--            <h1>--%>
-<%--                Zacznij pomagać!<br/>--%>
-<%--                Oddaj niechciane rzeczy w zaufane ręce--%>
-<%--            </h1>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</header>--%>

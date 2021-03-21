@@ -18,13 +18,13 @@
     <%@ include file="header.jsp" %>
     <ul>
         <li><a href="/" class="btn btn--without-border active">Start</a></li>
-        <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
+        <li><a href="/#steps" class="btn btn--without-border">O co chodzi?</a></li>
         <sec:authorize access="isAuthenticated()">
             <li><a href='<c:url value = "/donation/form"/>' class="btn btn--without-border ">Oddaj rzeczy</a></li>
         </sec:authorize>
-        <li><a href="#" class="btn btn--without-border">O nas</a></li>
-        <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-        <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+        <li><a href="/#about" class="btn btn--without-border">O nas</a></li>
+        <li><a href="/#institutions" class="btn btn--without-border">Fundacje i organizacje</a></li>
+        <li><a href="/#contact" class="btn btn--without-border">Kontakt</a></li>
     </ul>
     </nav>
     <div class="slogan container container--90">
@@ -56,7 +56,7 @@
     </div>
 </section>
 
-<section class="steps">
+<section class="steps" id="steps">
     <h2>Wystarczą 4 proste kroki</h2>
 
     <div class="steps--container">
@@ -86,7 +86,7 @@
     </sec:authorize>
 </section>
 
-<section class="about-us">
+<section class="about-us" id="about">
     <div class="about-us--text">
         <h2>O nas</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero
@@ -97,7 +97,7 @@
     </div>
 </section>
 
-<section class="help">
+<section class="help" id="institutions">
     <h2>Komu pomagamy?</h2>
 
     <!-- SLIDE 1 -->
