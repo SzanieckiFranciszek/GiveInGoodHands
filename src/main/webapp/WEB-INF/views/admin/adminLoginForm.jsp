@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -21,16 +20,7 @@
 
         <ul>
             <li><a href="/" class="btn btn--without-border active">Start</a></li>
-            <sec:authorize access="hasRole('ADMIN')">
-                <li><a href='<c:url value = "/admin/home"/>' class="btn btn--without-border ">Panel<br> administratora</a></li>
-            </sec:authorize>
-            <li><a href="/#steps" class="btn btn--without-border">O co chodzi?</a></li>
-            <sec:authorize access="isAuthenticated()">
-                <li><a href='<c:url value = "/donation/form"/>' class="btn btn--without-border ">Oddaj rzeczy</a></li>
-            </sec:authorize>
-            <li><a href="/#about" class="btn btn--without-border">O nas</a></li>
-            <li><a href="/#institutions" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="/#contact" class="btn btn--without-border">Kontakt</a></li>
+
         </ul>
     </nav>
 </header>

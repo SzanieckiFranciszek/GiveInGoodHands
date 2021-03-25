@@ -42,6 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("email")
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
+//                .usernameParameter("email")
+//                .loginPage("/admin/login")
+//                .defaultSuccessUrl("/userList")
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login")//Przekierowanie po wylogowaniu

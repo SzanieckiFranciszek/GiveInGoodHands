@@ -20,13 +20,13 @@
 <%@include file="../header.jsp"%>
         <ul>
             <li><a href="/" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
+            <li><a href="/#steps" class="btn btn--without-border">O co chodzi?</a></li>
             <sec:authorize access="isAuthenticated()">
                 <li><a href='<c:url value = "/donation/form"/>' class="btn btn--without-border ">Oddaj rzeczy</a></li>
             </sec:authorize>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="/#about" class="btn btn--without-border">O nas</a></li>
+            <li><a href="/#institutions" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="/#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
 
@@ -191,7 +191,7 @@
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Komentarz <textarea name="pickUpComment"  rows="5"></textarea>
+                            <label> Komentarz <textarea name="pickUpComment" rows="5"></textarea>
                             </label>
                         </div>
                     </div>

@@ -8,8 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
-@RequestMapping("/user")
+@RequestMapping("")
 public class UserController {
     private final UserService userService;
 
@@ -17,16 +20,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    //Add new user
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/register", method = RequestMethod.GET)
     public String saveRegistrationUser(Model model) {
 
         model.addAttribute("user", new User());
         return "user/registerForm";
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/register", method = RequestMethod.POST)
     public String saveRegistrationUserPost(
             @ModelAttribute("user") User user, @RequestParam("password2") String password2, Model model) {
         if (!user.getPassword().equals(password2)) {
@@ -35,21 +36,12 @@ public class UserController {
         }
         userService.add(user);
         userService.saveUser(user);
-//        if (userService.saveUser(user)) {
-//
-//            return "user/emailSent";
-//
-//        }
+
         return "user/emailSent";
     }
-    // All user account
 
-    //Edit user account
 
-    //Delete user account
-
-    //Confirm account user
-    @GetMapping("/confirm")
+    @GetMapping("/user/confirm")
     public String confirmToken(@RequestParam String token) {
         userService.confirmToken(token);
         return "user/activationAccount";

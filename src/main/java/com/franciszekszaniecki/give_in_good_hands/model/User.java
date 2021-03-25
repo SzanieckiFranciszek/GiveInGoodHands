@@ -24,7 +24,7 @@ public class User {
     @NotBlank
     private String lastName;
     private boolean enabled = false;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER )
     private Set<Role> roles;
 
 }

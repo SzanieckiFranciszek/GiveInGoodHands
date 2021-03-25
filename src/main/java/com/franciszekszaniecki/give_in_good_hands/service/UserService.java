@@ -1,15 +1,16 @@
 package com.franciszekszaniecki.give_in_good_hands.service;
 
 import com.franciszekszaniecki.give_in_good_hands.model.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 public interface UserService {
-    List<User> getUsers();
+    List<User> getAllUsers();
 
     User findByUserEmail(String email);
+
+    User findByUserId(Long id);
 
     void saveUser(User user);
 
@@ -25,4 +26,13 @@ public interface UserService {
 
     String confirmToken(String token);
 
+    Long numberOfConfirmedUser();
+
+    Long numberOfAllUsers();
+
+    List<User> findUserWhoIsAdmin();
+
+    Long numberOfAllAdmins();
+
+    void changeEnableStatus(Long id);
 }

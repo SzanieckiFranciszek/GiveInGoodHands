@@ -34,14 +34,20 @@ public class UserServiceImplements implements UserService {
 
 
     @Override
-    public List<User> getUsers() {
-        return null;
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     @Override
     public User findByUserEmail(String email) {
 
         return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public User findByUserId(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(String.format("User with id=%s doestnt exist", id)));
     }
 
     @Override
@@ -167,6 +173,35 @@ public class UserServiceImplements implements UserService {
 
     }
 
+    @Override
+    public Long numberOfConfirmedUser() {
+        return userRepository.numberOfConfirmedUser();
+    }
+
+    @Override
+    public Long numberOfAllUsers() {
+        return userRepository.numberOfAllUsers();
+    }
+
+    @Override
+    public List<User> findUserWhoIsAdmin() {
+        return userRepository.findUserWhoIsAdmin();
+    }
+
+    @Override
+    public Long numberOfAllAdmins() {
+        return userRepository.numberOfAllAdmins();
+    }
+
+    @Override
+    public void changeEnableStatus(Long id) {
+        if (userRepository.enableStatus(id).equals(true)) {
+            userRepository.changeStatusEnableToFalse(id);
+        } else if (userRepository.enableStatus(id).equals(false)) {
+            userRepository.changeStatusEnableToTrue(id);
+        }
+    }
+
 
     @Override
     public void add(User user) {
@@ -176,12 +211,13 @@ public class UserServiceImplements implements UserService {
 
     @Override
     public void update(User user) {
+        userRepository.save(user);
 
     }
 
     @Override
     public void delete(Long id) {
-
+        userRepository.deleteById(id);
     }
 
     @Override

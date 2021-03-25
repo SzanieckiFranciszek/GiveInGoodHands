@@ -16,7 +16,13 @@ public class InstitutionServiceImplements implements InstitutionService {
 
     @Override
     public List<Institution> findAllInstitution() {
+
         return institutionRepository.findAll();
+    }
+
+    @Override
+    public Long numberOfAllInstitutions() {
+        return institutionRepository.numberOfAllInstitutions();
     }
 }
 

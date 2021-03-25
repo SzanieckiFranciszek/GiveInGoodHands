@@ -1,8 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -50,7 +51,7 @@
         </div>
 
         <div class="form-group form-group--buttons">
-            <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
+            <a href="<c:url value="/login"/>" class="btn btn--without-border">Zaloguj się</a>
             <button  class="btn" type="submit">Załóż konto</button>
         </div>
     </form:form>

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/donation")
 public class DonationController {
@@ -36,5 +38,7 @@ public class DonationController {
         donationService.add(donation);
         return "donation/confirmForm";
     }
+
+
 
 }
